@@ -12,7 +12,7 @@ func main() {
     cmd.SysProcAttr = &syscall.SysProcAttr{
         Cloneflags: syscall.CLONE_NEWUTS | syscall.CLONE_NEWIPC | syscall.CLONE_NEWPID |
         syscall.CLONE_NEWNS |
-        syscall.CLONE_NEWUSER,
+        syscall.CLONE_NEWUSER | syscall.CLONE_NEWNET,
 
 // Default gid and uid are : uid=65534(nobody) gid=65534(nogroup) groups=65534(nogroup)
 // SysProcAttr.Credential isn't supported in Ubuntu 19.10.
