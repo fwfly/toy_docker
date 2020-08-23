@@ -8,6 +8,8 @@ all: $(target)
 $(target):
 	go build -o toy_docker
 
+2.2.3:
+	sudo go run ch2.3.3.go
 
 clean:
 	rm -f $(target)
