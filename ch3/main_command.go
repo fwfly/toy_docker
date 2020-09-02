@@ -3,6 +3,7 @@ import (
     "fmt"
     log "github.com/Sirupsen/logrus"
     "github.com/urfave/cli"
+    "ch3/container"
 )
 
 var runCommand = cli.Command {
@@ -19,12 +20,9 @@ var runCommand = cli.Command {
             return fmt.Errorf("Missing container command")
         }
         cmd := context.Args().Get(0)
-        //tty := context.Bool("ti")
+        tty := context.Bool("ti")
         log.Info("Run command %s ", cmd)
-        /*
-         Run isn't implemented yet :
-         Run(tty, cmd) 
-         */
+        Run(tty, cmd)
         return nil
     },
 }
@@ -36,10 +34,8 @@ var initCommand = cli.Command{
         log.Info("init come on")
         cmd := context.Args().Get(0)
         log.Info("command %s ", cmd)
-        /*
         err := container.RunContainerInitProcess(cmd, nil)
         return err
-        */
         return nil
     },
 }
