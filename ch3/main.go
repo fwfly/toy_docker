@@ -24,7 +24,7 @@ func main(){
         log.SetOutput(os.Stdout)
         return nil
     }
-
+    log.Info("main command %s %s ", os.Args[0], os.Args[1])
     if err := app.Run(os.Args); err != nil {
         log.Fatal(err)
     }

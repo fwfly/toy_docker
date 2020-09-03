@@ -33,7 +33,7 @@ var initCommand = cli.Command{
     Action: func(context *cli.Context) error {
         log.Info("init come on")
         cmd := context.Args().Get(0)
-        log.Info("command %s ", cmd)
+        log.Info("init command %s ", cmd)
         err := container.RunContainerInitProcess(cmd, nil)
         return err
         return nil

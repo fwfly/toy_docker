@@ -7,7 +7,7 @@ import (
 )
 
 func RunContainerInitProcess(command string, args []string) error {
-    log.Info("Command %s", command)
+    log.Info("container Init Command %s", command)
     defaultMountFlags := syscall.MS_NOEXEC | syscall.MS_NOSUID | syscall.MS_NODEV
     syscall.Mount("proc", "/proc", "proc", uintptr(defaultMountFlags), "")
     argv := []string{command}
